@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="880" height="340" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <rect width="880" height="340" rx="12" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="28" y="34" font-size="15" font-weight="700" fill="#0F172A">SVCET College Library — Relational SQLite Schema (svcet_library.db)</text>
+
+  <!-- Connectors -->
+  <path d="M 240 135 L 325 135" stroke="#1E3A8A" stroke-width="2" fill="none"/>
+  <path d="M 240 245 L 325 170" stroke="#1E3A8A" stroke-width="2" fill="none"/>
+  <path d="M 555 135 L 640 135" stroke="#0F766E" stroke-width="2" fill="none"/>
+  <path d="M 240 265 L 640 265 L 640 185" stroke="#0F766E" stroke-width="2" fill="none"/>
+
+  <!-- Table: books -->
+  <rect x="28" y="60" width="212" height="128" rx="8" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <rect x="28" y="60" width="212" height="30" rx="8" fill="#1E3A8A"/>
+  <rect x="28" y="82" width="212" height="8" fill="#1E3A8A"/>
+  <text x="42" y="80" font-size="13" font-weight="700" fill="#FFFFFF">books</text>
+  <text x="42" y="108" font-size="11.5" fill="#0F172A">PK  id (INTEGER)</text>
+  <text x="42" y="126" font-size="11.5" fill="#334155">UQ  isbn, title, author</text>
+  <text x="42" y="144" font-size="11.5" fill="#334155">department, rack_location</text>
+  <text x="42" y="162" font-size="11.5" fill="#334155">total_copies, available_copies</text>
+  <text x="42" y="178" font-size="11.5" fill="#64748B">edition, publisher, cover_variant</text>
+
+  <!-- Table: students -->
+  <rect x="28" y="205" width="212" height="114" rx="8" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <rect x="28" y="205" width="212" height="30" rx="8" fill="#1E3A8A"/>
+  <rect x="28" y="227" width="212" height="8" fill="#1E3A8A"/>
+  <text x="42" y="225" font-size="13" font-weight="700" fill="#FFFFFF">students</text>
+  <text x="42" y="253" font-size="11.5" fill="#0F172A">PK  id (INTEGER)</text>
+  <text x="42" y="271" font-size="11.5" fill="#334155">UQ  roll_no, email</text>
+  <text x="42" y="289" font-size="11.5" fill="#334155">name, department, year_sem</text>
+  <text x="42" y="307" font-size="11.5" fill="#64748B">phone, password_hash, max_books</text>
+
+  <!-- Table: issues -->
+  <rect x="325" y="75" width="230" height="145" rx="8" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <rect x="325" y="75" width="230" height="30" rx="8" fill="#0F172A"/>
+  <rect x="325" y="97" width="230" height="8" fill="#0F172A"/>
+  <text x="339" y="95" font-size="13" font-weight="700" fill="#FFFFFF">issues</text>
+  <text x="339" y="123" font-size="11.5" fill="#0F172A">PK  id (INTEGER)</text>
+  <text x="339" y="141" font-size="11.5" fill="#1E3A8A">FK  book_id -&gt; books.id</text>
+  <text x="339" y="159" font-size="11.5" fill="#1E3A8A">FK  student_id -&gt; students.id</text>
+  <text x="339" y="177" font-size="11.5" fill="#334155">issue_date, due_date, return_date</text>
+  <text x="339" y="195" font-size="11.5" fill="#334155">fine_amount (₹5/day), status</text>
+  <text x="339" y="211" font-size="11.5" fill="#64748B">issued_by</text>
+
+  <!-- Table: reservations -->
+  <rect x="640" y="75" width="212" height="130" rx="8" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <rect x="640" y="75" width="212" height="30" rx="8" fill="#0F766E"/>
+  <rect x="640" y="97" width="212" height="8" fill="#0F766E"/>
+  <text x="654" y="95" font-size="13" font-weight="700" fill="#FFFFFF">reservations</text>
+  <text x="654" y="123" font-size="11.5" fill="#0F172A">PK  id (INTEGER)</text>
+  <text x="654" y="141" font-size="11.5" fill="#0F766E">FK  book_id -&gt; books.id</text>
+  <text x="654" y="159" font-size="11.5" fill="#0F766E">FK  student_id -&gt; students.id</text>
+  <text x="654" y="177" font-size="11.5" fill="#334155">requested_at, status</text>
+  <text x="654" y="195" font-size="11.5" fill="#64748B">notes</text>
+</svg>
